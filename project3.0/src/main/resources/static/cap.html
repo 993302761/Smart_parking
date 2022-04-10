@@ -1,0 +1,69 @@
+<html lang="zh-cmn-Hans">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<title>分布图</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gbgh1ToI28RT2odzaWlu6vL0zpnigpOg"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><!--调用jQuery-->
+<style type="text/css">
+    body, html,#allmap {width: 100%;height:100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+</style>
+
+</head>
+
+<body>
+<div id="allmap"></div>
+</body>
+</html>
+
+<script>
+    function points(){
+        $.ajax({
+            url:'/point',
+            type: 'POST',
+            data:{},
+            success:function (obs) {
+                    point_Arr = obs.split(";");
+                var i=0;
+                while (i<point_Arr.length-1) {
+                    var arr = new Array()
+                    arr = point_Arr[i].split(",");
+                    var latitude = arr[0];
+                    var longitude = arr[1];
+                    var point = new BMap.Point(longitude, latitude);//创建点坐标
+                    map.centerAndZoom(point, 16);//初始化地图， 设置中心点坐标和地图级别
+                    var marker = new BMap.Marker(point);
+                    var gc = new BMap.Geocoder();// 将地址解析结果显示在地图上，并调整地图视野
+                        gc.getLocation(point, function (rs) {  //定位到当前位置
+                        var licontent = "<b>地址：</b>" + rs.addressComponents.city;
+                        licontent += "-" + rs.addressComponents.district;
+                        licontent += "-" + rs.addressComponents.street;
+                        var opts = {
+                            width: 200,
+                            height: 80,
+                        };
+                        var infoWindow = new BMap.InfoWindow(licontent, opts);// 创建信息窗口对象
+                        marker.addEventListener('click', function () {
+                            marker.openInfoWindow(infoWindow);//开启信息窗口
+                        });
+                        // console.log(rs.addressComponents);//结构化的地址描述(object)
+                        // console.log(rs.addressComponents.province); //省
+                        // console.log(rs.addressComponents.city); //城市
+                        // console.log(rs.addressComponents.district); //区县
+                        // console.log(rs.addressComponents.street); //街道
+                        // console.log(rs.addressComponents.streetNumber); //门牌号
+                    });
+                    i++;
+                    map.addOverlay(marker);
+
+                }
+            }
+        });
+    }
+    var map = new BMap.Map("allmap");
+    map.enableScrollWheelZoom();////启用滚轮放大缩小，默认禁用。
+
+    var point_Arr = new Array();
+    points();
+
+</script>
+

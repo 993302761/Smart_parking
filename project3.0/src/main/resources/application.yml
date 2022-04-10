@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: parking
+  thymeleaf:
+    cache: false #开发时关闭缓存，不然无法看到实时页面
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project
+    username: root
+    password: "001124"
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8

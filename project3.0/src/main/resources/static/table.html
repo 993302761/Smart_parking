@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>车位数据</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <style>
+        body{margin: 10px;}
+        .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    </style>
+</head>
+<body>
+
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="more">更多 <i class="layui-icon layui-icon-down"></i></a>
+</script>
+<script src="web/js/jquey-3.5.1.min.js"></script>
+<script src="layui/layui.js"></script>
+<script>
+
+
+
+
+
+
+
+    layui.config({
+        version: '1629677917971' //为了更新 js 缓存，可忽略
+    });
+
+    //加载模块
+    layui.use(function(){ //亦可加载特定模块：layui.use(['layer', 'laydate', function(){
+                          //得到各种内置组件
+        var layer = layui.layer //弹层
+            ,laypage = layui.laypage //分页
+            ,laydate = layui.laydate //日期
+            ,table = layui.table //表格
+            ,carousel = layui.carousel //轮播
+            ,upload = layui.upload //上传
+            ,element = layui.element //元素操作
+            ,slider = layui.slider //滑块
+            ,dropdown = layui.dropdown //下拉菜单
+
+
+
+        //监听Tab切换
+        element.on('tab(demo)', function(data){
+            layer.tips('切换了 '+ data.index +'：'+ this.innerHTML, this, {
+                tips: 1
+            });
+        });
+
+        //执行一个 table 实例
+        table.render({
+            elem: '#demo'
+            ,height: 420
+            ,url: '/reg' //数据接口
+            ,title: '用户表'
+            ,page: true //开启分页
+            ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            ,totalRow: true //开启合计行
+            ,cols: [[ //表头
+                {type: 'checkbox', fixed: 'left'}
+                ,{field: 'park_id', title: '车位编号', width:180, sort: true}
+                ,{field: 'place', title: '城市', width:180}
+                ,{field: 'isfree', title: '是否免费(Y/N)', width: 180}
+                ,{field: 'charge', title: '价格', width:180}
+                ,{field: 'latitude', title: '纬度', width: 180}
+                ,{field: 'longitude', title: '经度', width:180}
+                ,{fixed: 'right', width: 150, align:'center', toolbar: '#barDemo'}
+            ]]
+        });
+
+        function dss(){
+            location.reload()
+        }
+        //监听头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+                case 'add':
+                    function ds() {
+                        layer.confirm('添加：' +
+                            '<table>\n' +
+                            '    <tr>\n' +
+                            '        <td>\n' +
+                            '            车位编号: <input id = "a1" style="width: 40px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '        <td>\n' +
+                            '            城市: <input id = "a2" style="width: 100px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '        <td>\n' +
+                            '            是否免费: <input id = "a3" style="width: 80px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '        <td>\n' +
+                            '            价格: <input id = "a4" style="width: 80px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '        <td>\n' +
+                            '            纬度: <input id = "a5" style="width: 80px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '        <td>\n' +
+                            '            经度: <input id = "a6" style="width: 80px;height: 20px;">\n' +
+                            '        </td>\n' +
+                            '    </tr>',function (index){
+                            var str = "{\"park_id\":\""+$('#a1').val()+"\",\"place\":\""+$('#a2').val()+"\",\"isfree\":\""+$('#a3').val()+"\",\"charge\":"+$('#a4').val()+",\"latitude\":"+$('#a5').val()+",\"longitude\":"+$('#a6').val()+"}"
+                            console.log(str)
+
+                            $.ajax({
+                                url:'/add',
+                                type: 'POST',
+                                data:{'data':str},
+                                success:function (obs) {
+                                    if(obs == "Y"){
+                                        dss();
+                                        layer.close(index);
+
+                                    console.log("sadasf")
+                                    }
+                                    else alert("添加失败")
+                                }
+                            });
+                        });
+                    }
+                    ds();
+                    break;
+                case 'delete':
+                    if(data.length === 0){
+                        layer.msg('请选择一行');
+                    } else {
+                        console.log(data.length)
+                        console.log(JSON.stringify(data))
+
+                        $.ajax({
+                            url:'/listDel',
+                            type: 'POST',
+                            data:{'data':JSON.stringify(data)},
+                            success:function (obj) {
+                                function d(){
+                                    dss();
+                                  layer.msg("删除成功")
+                                }
+                                d();
+                            }
+                        });
+                        layer.msg('删除');
+                    }
+                    break;
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+
+                ,layEvent = obj.event; //获得 lay-event 对应的值
+
+            if(layEvent === 'detail'){
+                layer.msg('查看操作');
+            } else if(layEvent === 'more'){
+                //下拉菜单
+                dropdown.render({
+                    elem: this //触发事件的 DOM 对象
+                    ,show: true //外部事件触发即显示
+                    ,data: [{
+                        title: '编辑'
+                        ,id: 'edit'
+                    },{
+                        title: '删除'
+                        ,id: 'del'
+                    }]
+                    ,click: function(menudata){
+                        if(menudata.id === 'del'){
+                            var str = JSON.stringify(data)
+                            console.log(str)
+                                $.ajax({
+                                    url:'/del',
+                                    type: 'POST',
+                                    data:{'data':str},
+                                    success:function () {
+                                        function d(index){
+                                            obj.del();
+                                            layer.close(index);
+                                        }
+                                        d();
+                                }
+                                });
+                            //
+                            // });
+                        } else if(menudata.id === 'edit'){
+                            // layer.msg('编辑操作，当前行 ID:'+ JSON.stringify(data));
+                            var str = data.park_id+","+data.place+","+data.isfree+","+data.charge+","+data.latitude+","+data.longitude;
+                            function liststr(){
+                                $.ajax({
+                                    url:'/msg',
+                                    type: 'POST',
+                                    data:{'data':str},
+                                    success:function (obs) {
+                                        if(obs == "Y"){
+                                            console.log("成功")
+                                        }
+                            }
+                                })
+                            }
+                            liststr();
+
+                            layer.confirm('编辑：' +
+                                '<table>\n' +
+                                '    <tr>\n' +
+                                // '        <td>\n' +
+                                // '            park_id: <input id = "x1" type="text" style="width: 40px;height: 20px;">\n' +
+                                // '        </td>\n' +
+                                // '        <td>\n' +
+                                // '            place: <input id = "x2" style="width: 100px;height: 20px;">\n' +
+                                // '        </td>\n' +
+                                '        <td>\n' +
+                                '            是否免费: <input id = "x3" style="width: 80px;height: 20px;">\n' +
+                                '        </td>\n' +
+                                '        <td>\n' +
+                                '            价格: <input id = "x4" style="width: 80px;height: 20px;">\n' +
+                                '        </td>\n' +
+                                '        <td>\n' +
+                                '            纬度: <input id = "x5" style="width: 80px;height: 20px;" type="number">\n' +
+                                '        </td>\n' +
+                                '        <td>\n' +
+                                '            经度: <input id = "x6" style="width: 80px;height: 20px;" type="number">\n' +
+                                '        </td>\n' +
+                                '    </tr>' +
+                                '<script src="web/js/jquey-3.5.1.min.js"><\/script>' +
+                                '<script>' +
+                                'function liststrs(){' +
+                                'var strs = new Array();' +
+                                '    $.ajax({' +
+                                '    url:\'/unmsg\',' +
+                                '    type: \'POST\',' +
+                                '    data:{},' +
+                                '    success:function (obs) {' +
+                                'console.log(obs);' +
+                                // '     ' +
+                                '     strs = obs.split(",");' +
+                                // '     $("#x1").attr("value",strs[0]);' +
+                                // '     $("#x2").attr("value",strs[1]);' +
+                                '     $("#x3").attr("value",strs[2]);' +
+                                '     $("#x4").attr("value",strs[3]);' +
+                                '     $("#x5").attr("value",strs[4]);' +
+                                '     $("#x6").attr("value",strs[5]);' +
+                                '    }' +
+                                '   })' +
+                                '}' +
+                                'liststrs();' +
+                                '' +
+                                '<\/script>',function (index){
+
+                                var str = "{\"park_id\":\""+"xxx"+"\",\"place\":\""+"xxx"+"\",\"isfree\":\""+$('#x3').val()+"\",\"charge\":"+$('#x4').val()+",\"latitude\":"+$('#x5').val()+",\"longitude\":"+$('#x6').val()+"}"
+                                console.log(str)
+                                var old = JSON.stringify(data)
+                                $.ajax({
+                                    url:'/update',
+                                    type: 'POST',
+                                    data:{'olddata':old,'newdata':str},
+                                    success:function (obs) {
+                                        if(obs == "Y"){
+                                            dss();
+                                            layer.close(index);
+                                        }
+                                        else alert("添加失败")
+                                    }
+                                });
+                            });
+                        }
+                    }
+                    ,align: 'right' //右对齐弹出（v2.6.8 新增）
+                    ,style: 'box-shadow: 1px 1px 10px rgb(0 0 0 / 12%);' //设置额外样式
+                })
+            }
+        });
+    });
+</script>
+</body>
+</html>
