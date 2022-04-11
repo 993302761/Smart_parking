@@ -80,8 +80,8 @@
         </div>
         <div class="form-group">
           <div class="col-100">
-            <label>车牌号：</label>
-            <input type="text" name="car_id" id="car_id" class="form-control" placeholder="车牌号" maxlength="20">
+            <label>停车场名：</label>
+            <input type="text" name="car_id" id="car_id" class="form-control" placeholder="停车场名" maxlength="20">
             <p class="help-block"></p>
           </div>
         </div>
@@ -124,6 +124,29 @@
             </select>
           </div>
         </div>
+
+        <div class="form-group">
+          <div class="col-100">
+            <label>市：</label>
+            <select name="province" class="form-control">
+              <option value="">市</option>
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-100">
+            <label>区：</label>
+            <select name="province" class="form-control">
+              <option value="">区</option>
+
+            </select>
+          </div>
+        </div>
+
+
         <div class="form-group">
           <div class="col-100" style="padding-top: 20px;">
             <button type="submit" class="btn" id="J_register">填写完成并提交</button>
@@ -140,7 +163,6 @@
             <p>6、口令中不能出现3位以上（含三位）重复字母、数字、特殊字符；</p>
             <p>7、口令中不能含有手机号后四位；</p>
             <p>8、5次以内不得设置相同的口令；</p>
-            <p>9、口令需避免<span class="showRuleModal">易猜解口令</span>；</p>
           </div>
         </div>
       </form>
@@ -170,7 +192,6 @@
   
   <script src="web/register_page/js/libs/require/require.min.js"></script>
   <script src="web/register_page/js/common.js"></script>
-  <!--<script src="../js/libs/rsa/jsencrypt.min.js"></script>-->
   <script src="web/register_page/js/pages/login/register.js"></script>
 
 
