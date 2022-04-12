@@ -10,6 +10,13 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <link rel="stylesheet" href="web/register_page/css/login.css">
+
+
+  <link href="web/register_page/layui/css/layui.css" rel="stylesheet" />
+  <script src="web/register_page/layui/layui.js" type="text/javascript"></script>
+  <script src="web/register_page/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="web/register_page/js/area.js" type="text/javascript"></script>
+  <script src="web/register_page/js/selectMore.js" type="text/javascript"></script>
 </head>
 
 <body ontouchstart class="page-register-forget">
@@ -86,6 +93,7 @@
           </div>
         </div>
 
+
         <div class="form-group">
           <div class="col-100">
             <label>选择省份：</label>
@@ -126,28 +134,6 @@
         </div>
 
         <div class="form-group">
-          <div class="col-100">
-            <label>市：</label>
-            <select name="province" class="form-control">
-              <option value="">市</option>
-
-            </select>
-
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-100">
-            <label>区：</label>
-            <select name="province" class="form-control">
-              <option value="">区</option>
-
-            </select>
-          </div>
-        </div>
-
-
-        <div class="form-group">
           <div class="col-100" style="padding-top: 20px;">
             <button type="submit" class="btn" id="J_register">填写完成并提交</button>
           </div>
@@ -169,33 +155,36 @@
     </div>
   </div>
 
-  <script type="text/javascript" >
-    $("#J_register").click(function () {
-      $.ajax({
-        url: "http://localhost:8080/project_war/register",
-        method: "post",
-        data: {'phone': $("#phone").val(),'car_id': $("#car_id").val(), 'username': $("#username").val(),'password': $("#password").val()},
-        xhrFields: {
-          withCredentials: true //允许跨域带Cookie
-        },
-        success: function (result) {
-          window.location.href ="login_page.html";
-        },
-        error: function (result) {
-          alert(result.responseText)
-        }
-      })
-    });
-  </script>
- 
-  
-  
-  <script src="web/register_page/js/libs/require/require.min.js"></script>
-  <script src="web/register_page/js/common.js"></script>
-  <script src="web/register_page/js/pages/login/register.js"></script>
-
+<!--  <script type="text/javascript" >-->
+<!--    $("#J_register").click(function () {-->
+<!--      $.ajax({-->
+<!--        url: "http://localhost:8080/project_war/register",-->
+<!--        method: "post",-->
+<!--        data: {'phone': $("#phone").val(),'car_id': $("#car_id").val(), 'username': $("#username").val(),'password': $("#password").val()},-->
+<!--        xhrFields: {-->
+<!--          withCredentials: true //允许跨域带Cookie-->
+<!--        },-->
+<!--        success: function (result) {-->
+<!--          window.location.href ="login_page.html";-->
+<!--        },-->
+<!--        error: function (result) {-->
+<!--          alert(result.responseText)-->
+<!--        }-->
+<!--      })-->
+<!--    });-->
+<!--  </script>-->
 
 </div>
 </body>
+
+<!--获取相关的选中事件-->
+<script type="text/javascript">
+  function getSelectInfo() {
+    var getSelectProvence = $('#province option:selected').text();
+    var getSelectCity = $('#city option:selected').text();
+    var getSelectCity = $('#district option:selected').text();
+    alert("获取的内容:--省份:" + getSelectProvence + "--地级市:" + getSelectCity + "--县区:" + getSelectCity);
+  }
+</script>
 
 </html>
