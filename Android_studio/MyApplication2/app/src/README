@@ -1,0 +1,12 @@
+gradle-version 6.9.2
+
+报错：Could not start AVD
+
+    sudo chown lyq -R /dev/kvm    lyq为用户名
+
+
+
+百度地图SDK
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey
+密码：android
+获取发布版SHA1

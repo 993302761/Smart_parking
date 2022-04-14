@@ -64,7 +64,7 @@
         <!--百度API_KEY-->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="mtbx43GIdbZkhXhHnRaaclIxIpdDePhi" />
+            android:value="kEFoW3WtYLgsmXVBGtgVmP6ccGWvIIb9" />
         <!--百度定位服务-->
         <service
             android:name="com.baidu.location.f"
