@@ -10,3 +10,6 @@ gradle-version 6.9.2
 keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey
 密码：android
 获取发布版SHA1
+
+
+android 12
