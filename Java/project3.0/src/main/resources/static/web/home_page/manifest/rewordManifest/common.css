@@ -1,7 +1,4 @@
-@font-face {
-    font-family: iconfont;
-    src: url(/fonts/iconfont-6050a.woff2) format("woff2"),url(/fonts/iconfont-c83b1.woff) format("woff"),url(/fonts/iconfont-c682b.ttf) format("truetype")
-}
+
 
 .iconfont {
     font-family: iconfont!important;
