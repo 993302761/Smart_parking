@@ -31,6 +31,7 @@ create table Vehicle_information(user_name int(11) primary key,
 
         Order_information                  //订单信息表
         {
+         order_number:订单编号
         user_name：用户名
         inTime：进入时间
         outTime：离开时间
@@ -41,10 +42,11 @@ create table Vehicle_information(user_name int(11) primary key,
         whether_to_pay ：是否支付
         }
 
-create table Order_information(user_name int(11) primary key,
+create table Order_information( order_number varchar(50)  primary key,
+                                 user_name int(11) not null,
                                  inTime datetime,
                                  outTime datetime,
-                                 parking_lot_name varchar(50) not null,
+                                 parking_lot_name varchar(50),
                                  parking_lot_number varchar(20) not null,
                                  license_plate_number varchar(20) not null,
                                  payment_amount float,
@@ -107,10 +109,18 @@ Redis
         }
 
 
+         Recent_login_user      //最近登录的用户
+         {
+         UUID：通用唯一识别码
+         user_name：用户名
+         heartTime：心跳时间
+         }
+
 }
 
 
-ES{
+ES
+{
 
         Parking_lot_information         //停车场信息
         {
