@@ -1,6 +1,4 @@
-@font-face {
-    font-family: iconfont;
-}
+
 
 .iconfont {
     font-family: iconfont!important;
@@ -1824,6 +1822,7 @@ li {
 
 .mini-banner.mini-banner-search {
     height: 260px;
+    background-image: url(/img/banner-document-25a5b.png)!important
 }
 
 .mini-banner.mini-banner-search .container {
@@ -2392,6 +2391,7 @@ li {
     left: 50%;
     width: 40px;
     height: 40px;
+    background: #fff url(/img/loading-d96f6.gif) no-repeat 50%;
     margin: -20px 0 0 -20px;
     border-radius: 4px
 }
@@ -2403,6 +2403,7 @@ li {
 }
 
 .loading-more {
+    background: #999 url(/img/loading2-e0ffa.gif) no-repeat 20px;
     color: #fff;
     font-size: 14px;
     display: inline-block;
@@ -2445,6 +2446,7 @@ li {
     line-height: 32px;
     text-align: center;
     width: 32px;
+    background-image: url(/img/social-51c49.png);
     background-size: 96px 32px;
     background-repeat: no-repeat;
     position: relative;
@@ -2455,6 +2457,7 @@ li {
 }
 
 .social-contact a.weixin .box {
+    background-image: url(/img/qrcode-17c56.jpg)
 }
 
 .social-contact a.weibo {
@@ -2462,6 +2465,7 @@ li {
 }
 
 .social-contact a.weibo .box {
+    background-image: url(/img/qrcode-weibo-95585.jpg)
 }
 
 .social-contact a.douyin {
@@ -2469,6 +2473,7 @@ li {
 }
 
 .social-contact a.douyin .box {
+    background-image: url(/img/qrcode-douyin-b3575.jpg)
 }
 
 .social-contact a.link {
@@ -3041,7 +3046,8 @@ button,input,select,textarea {
 }
 
 .iconImage {
-;background-size: 400px auto;
+    background: url() no-repeat;
+    background-size: 400px auto;
     display: inline-block;
     overflow: hidden
 }
@@ -3832,6 +3838,7 @@ button,input,select,textarea {
 }
 
 .banner {
+    background: url("../home/release/image/20210525/e-banner5.png") no-repeat;
     width: 100%;
     height: 530px;
     position: relative
@@ -3855,6 +3862,7 @@ button,input,select,textarea {
 }
 
 .banner.proDetail section.innerBanner {
+    background: url(/img/bannerBg-70994.png) no-repeat;
     background-position-x: center
 }
 
@@ -3979,6 +3987,7 @@ button,input,select,textarea {
 
 .banner button:before {
     content: "";
+    background: url() no-repeat;
     background-size: 400px auto;
     display: inline-block;
     overflow: hidden;
@@ -4034,6 +4043,7 @@ button,input,select,textarea {
     position: absolute;
     top: 97px;
     right: 0;
+    background: url() no-repeat
 }
 
 .banner .bannerRightCircle img {
@@ -4169,6 +4179,7 @@ ul.secondNavTab li.fr button.iconChat {
 
 ul.secondNavTab li.fr button:before {
     content: "";
+    background: url() no-repeat;
     background-size: 400px auto;
     display: inline-block;
     overflow: hidden;
@@ -4206,6 +4217,7 @@ ul.secondNavTab span.shareAlert i {
 }
 
 ul.secondNavTab span.shareAlert .iconImage {
+    background: url("") no-repeat
 }
 
 ul.secondNavTab span.shareAlert .iconShareXinlang {
@@ -5001,6 +5013,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-solution .mini-banner {
+    background-image: url(/img/bg-proTab-8d97c.jpg)
 }
 
 .solution-tabs .nav-tabs {
@@ -5231,6 +5244,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .ict-banner {
+    background-image: url(/img/ict-f9982.jpg)
 }
 
 .ict-title {
@@ -5543,6 +5557,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .terminal-content .top-banner {
+    background-image: url(/img/top_banner_terminal-92e0c.png)
 }
 
 .terminal-content .terminal-list {
@@ -5862,13 +5877,16 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box .iconImage {
+    background: url() no-repeat;
     cursor: pointer
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box i.iconHeartCollect {
+    background: url(/img/collection-925bd.png) no-repeat
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box i.iconHeartCollect.active {
+    background: url(/img/collection-fill-b0afb.png) no-repeat
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box span.collectAlert {
@@ -5891,6 +5909,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box i.iconShare {
+    background: url(/img/icon-share-e5a3d.png) no-repeat
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box .shareMode {
@@ -5935,6 +5954,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-intro .terminal-icons .icon-box i.iconPrint {
+    background: url(/img/icon-Printing-3caa6.png) no-repeat
 }
 
 .page-terminal-detail .terminal-intro .desc {
@@ -6153,6 +6173,7 @@ section.dataInLineModel i.iconDocu {
     width: 80%;
     padding-top: 15%;
     margin: -50px auto 10px;
+    background: url(/img/rotate_circle-3ee91.png) no-repeat 50%;
     background-size: 100% 100%;
     position: relative
 }
@@ -6171,10 +6192,12 @@ section.dataInLineModel i.iconDocu {
 
 .page-terminal-detail .terminal-show .chassis .rotate-left {
     left: -7%;
+    background-image: url(/img/rotate_left-ef6ea.png)
 }
 
 .page-terminal-detail .terminal-show .chassis .rotate-right {
     right: -7%;
+    background-image: url(/img/rotate_right-d2c08.png)
 }
 
 .page-terminal-detail .bottom-shadow {
@@ -6396,6 +6419,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif1.aos-animate {
+    background-image: url(/img/gif1-203a4.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif2 {
@@ -6406,6 +6430,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif2.aos-animate {
+    background-image: url(/img/gif2-26c87.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif3 {
@@ -6414,6 +6439,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif3.aos-animate {
+    background-image: url(/img/gif3-90e23.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif4 {
@@ -6422,6 +6448,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif4.aos-animate {
+    background-image: url(/img/gif4-0699a.gif);
     background-position: 50%
 }
 
@@ -6430,6 +6457,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif5.aos-animate {
+    background-image: url(/img/gif5-35b32.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif6 {
@@ -6437,6 +6465,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif6.aos-animate {
+    background-image: url(/img/gif6-e58b4.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif7 {
@@ -6445,9 +6474,11 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif7.aos-animate {
+    background-image: url(/img/gif7-3a273.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif8.aos-animate {
+    background-image: url(/img/gif8-465e6.gif)
 }
 
 .page-terminal-detail .terminal-feature .ani-gif9 {
@@ -6456,6 +6487,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .ani-gif9.aos-animate {
+    background-image: url(/img/gif9-23f2d.gif)
 }
 
 .page-terminal-detail .terminal-feature .arrow {
@@ -6469,34 +6501,42 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-terminal-detail .terminal-feature .arrow-up-left {
+    background-image: url(/img/arrow_h_up_left-a54d3.png);
     left: -5%
 }
 
 .page-terminal-detail .terminal-feature .arrow-up-right {
+    background-image: url(/img/arrow_h_up_right-c203e.png);
     background-position: 100% 0;
     margin-left: 50%;
     right: -5%
 }
 
 .page-terminal-detail .terminal-feature .arrow-down-left {
+    background-image: url(/img/arrow_h_down_left-af803.png);
     left: -5%
 }
 
 .page-terminal-detail .terminal-feature .arrow-down-right {
+    background-image: url(/img/arrow_h_down_right-23840.png);
     margin-left: 50%;
     right: -5%
 }
 
 .page-terminal-detail .terminal-feature .arrow-up-left-v {
+    background-image: url(/img/arrow_v_up_left-5a219.png)
 }
 
 .page-terminal-detail .terminal-feature .arrow-up-right-v {
+    background-image: url(/img/arrow_v_up_right-3a5ed.png)
 }
 
 .page-terminal-detail .terminal-feature .arrow-down-left-v {
+    background-image: url(/img/arrow_v_down_left-6e511.png)
 }
 
 .page-terminal-detail .terminal-feature .arrow-down-right-v {
+    background-image: url(/img/arrow_v_down_right-338aa.png)
 }
 
 .page-terminal-detail .terminal-params {
@@ -6688,6 +6728,7 @@ section.dataInLineModel i.iconDocu {
 }
 
 .page-case .mini-banner {
+    background-image: url(/img/banner-1ca6a.jpg)
 }
 
 .case-tabs>li>a {
@@ -6906,6 +6947,7 @@ section.applyQuesQueryArea {
 }
 
 .iconApplyQuesImage {
+    background: url(/img/applyQuesQuery-86b6c.png) no-repeat;
     background-size: 85px auto;
     display: inline-block;
     overflow: hidden
@@ -6988,6 +7030,7 @@ section.applyQuesQueryArea ul.leftList li.active:after,section.applyQuesQueryAre
     content: "";
     width: 5px;
     height: 10px;
+    background: url(/img/applyQuesQuery-86b6c.png) no-repeat;
     background-size: 85px auto;
     background-position: -40px -20px;
     position: absolute;
@@ -7466,6 +7509,7 @@ section.feedback .feedbackArea a.chooseType.active:before {
     position: absolute;
     right: 0;
     bottom: 0;
+    background: url(/img/applyQuesQuery-86b6c.png) no-repeat;
     background-size: 85px auto;
     background-position: 0 -40px;
     overflow: hidden
@@ -7596,6 +7640,7 @@ section.selfServiceArea {
 }
 
 .iconSelfServiceImage {
+    background: url(/img/selfService-f9c65.png) no-repeat;
     background-size: 120px auto;
     display: inline-block;
     overflow: hidden
@@ -7718,6 +7763,7 @@ section.selfServiceArea ul.leftList li.active:after,section.selfServiceArea ul.l
     content: "";
     width: 5px;
     height: 10px;
+    background: url(/img/selfService-f9c65.png) no-repeat;
     background-size: 120px auto;
     background-position: -50px -30px;
     position: absolute;
@@ -7952,6 +7998,7 @@ section.selfSerBill .billTitle select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    background: url(/img/selectArrow-ae26e.png) no-repeat scroll 100% transparent;
     background-position-x: 225px;
     padding: 0 20px
 }
@@ -8918,9 +8965,11 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
 }
 
 .page-support .mini-banner {
+    background-image: url(/img/bg-service-ca5fc.jpg)
 }
 
 .page-partner .mini-banner {
+    background-image: url(/img/banner-e0cfe.jpg)
 }
 
 .page-partner .list-box .box {
@@ -9302,6 +9351,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     height: 41px;
     line-height: 41px;
     padding-left: 32px;
+    background: url(/img/search-f27f3.jpg) 0 no-repeat;
     border: none;
     font-size: 16px;
     color: #ccc;
@@ -9418,6 +9468,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
 }
 
 .search-banner {
+    background-image: url(/img/bg-search-d84c5.jpg)
 }
 
 .bc_bg {
@@ -9440,6 +9491,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     height: 82px;
     line-height: 82px;
     margin: 0 auto;
+    background: url(/img/car_logo-5ef50.jpg) 0 no-repeat;
     font-size: 24px;
     color: #212121;
     padding-left: 60px
@@ -9467,6 +9519,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     padding-bottom: 240px;
     height: 80px;
     margin-left: 300px;
+    background: url(/img/car_tip-2fd19.jpg) 0 0 no-repeat;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box
@@ -9557,6 +9610,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/uncheck-cfcb0.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9564,6 +9618,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/checked-4d578.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9617,6 +9672,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/uncheck-cfcb0.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9624,6 +9680,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/checked-4d578.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9666,6 +9723,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/uncheck-cfcb0.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9673,6 +9731,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/checked-4d578.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9745,6 +9804,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/uncheck-cfcb0.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9752,6 +9812,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/checked-4d578.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9815,6 +9876,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
 }
 
 .bc_bg .bc_list_content .bc_list_contain .bc_list_left_s p:nth-child(3) {
+    background: url(/img/seven-53943.jpg) 0 no-repeat;
     font-size: 12px;
     color: #999;
     padding-left: 20px
@@ -9845,6 +9907,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/uncheck-cfcb0.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -9852,6 +9915,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
     display: block;
     width: 17px;
     height: 17px;
+    background: url(/img/checked-4d578.jpg) 50% no-repeat;
     content: ""
 }
 
@@ -10138,6 +10202,7 @@ section.selfSerSetting .changePwdArea a.cancelChange:hover {
 }
 
 .page-news .mini-banner {
+    background-image: url(/img/banner-e61e6.jpg)
 }
 
 .page-news .nav-tabs {
@@ -10389,14 +10454,19 @@ section.showDataList .dataListDom .showQRCodeArea p {
 }
 
 .page-about .mini-banner {
+    background-image: url(/img/bg-about-621ef.jpg)
 }
 
 .page-login {
-    background: #eceef0 url('../../img/login-bg-d9105.jpg') no-repeat 50% fixed;
+    background: #eceef0 url(/img/login-bg-d9105.jpg) no-repeat 50% fixed;
     background-size: cover;
     color: #fff;
     font-size: 14px;
     font-weight: 300
+}
+
+.page-login a:hover {
+    text-decoration: underline
 }
 
 .page-login .container {

@@ -10499,3 +10499,89 @@ button.toast-close-button {
         padding: 15px 50px 15px 15px
     }
 }
+
+
+.video_con {
+            float: left;
+            width: 28%;
+            height: 31%;
+            background-color: #666;
+            margin-left: 1%;
+            margin-top: 0.5%;
+}
+.video {
+            float: left;
+            width: 28%;
+            height: 31%;
+            background-color: #666;
+            margin-left: 2%;
+            margin-top: 0.5%;
+}
+.video1 {
+            float: left;
+            width: 28%;
+            height: 31%;
+            background-color: #666;
+            margin-left:62%;
+            margin-top: -14.5%;
+}
+.video2 {
+            float: left;
+            width: 28%;
+            height: 31%;
+            background-color: #666;
+            margin-left:62%;
+            margin-top: 2%;
+}
+
+.video3{
+	float: left;
+	width: 28%;
+	height: 31%;
+	background-color: #666;
+	margin-left:31%;
+	margin-top: -15%;
+}
+
+.video4{
+	float: left;
+	width: 28%;
+	height: 31%;
+	background-color: #666;
+	margin-left:1%;
+	margin-top: -15%;
+}
+
+.video5{
+	float: left;
+	width: 28%;
+	height: 31%;
+	background-color: #666;
+	margin-left:1%;
+	margin-top: 2%;
+}
+
+.video6{
+	float: left;
+	width: 28%;
+	height: 31%;
+	background-color: #666;
+	margin-left:2%;
+	margin-top: 2%;
+}
+.video7{
+	float: left;
+	width: 28%;
+	height: 31%;
+	background-color: #666;
+	margin-left:3%;
+	margin-top: 2%;
+}
+.video10{
+			float: left;
+            width: 90%;
+            height: 67.5%;
+            background-color: #666;
+            margin-left: 1%;
+            margin-top: 0.5%;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-Compatible" content="ie=edge,chrome=1">
+    <title>智慧停车 首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="email=no, address=no, telephone=no">
+    <script type="text/javascript" src="js/jquey-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/vedio.js"></script>
+
+  <link href="css/vendor.css" rel="stylesheet">
+  <link href="css/common2.css" rel="stylesheet">
+
+</head>
+
+<body onload="getMedia1()">
+     <!-- 顶部-->
+    <div class="top">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+                <li>
+                <a href="#" class="olcs">在线客服</a>
+            </li>
+            </div>
+            <div class="col-xs-8">
+              <ul>
+                  <li>
+                      智慧停车  欢迎您的到来
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<section class="banner">
+    <section class="innerBanner clearfix">
+        <h1 class="bannerTitle fl" >智慧停车</h1>
+        <i id = "solution_favorite_10055"   data-type="3" class="iconImaglse iconHeartCollect fl   portalCollect" data-id="10055">
+        </i>
+        <a href="#" id = "solution_orderAndconsult_10055" class="goToBespeak portalCollect" data-type="2" data-value="10055" data-label="智慧停车">
+          <button id="buy_appoint" class="iconChat fl bluBtu "  data-type="3" data-number="1" data-id="10055">关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+        <section class="bannerRightCircle">
+            <img src="home/release/image/20210525/m-wuye.png" alt="智慧停车"/>
+        </section>
+    </section>
+</section>
+
+
+    <!--停车场监控部分-->
+    <section class="detailModel onlyTextModel">
+        <h1 class="modelTitle clearfix" id="s2">
+            <span class="fl">停车场监控</span>
+            <p class="fl">Parking lot monitoring</p>
+        </h1>
+        <ul class="curdefault clearfix">
+         <div class="video10">
+             <video id="video1" controls muted="none" width="100%" height="100%"  data-setup="{}" autoplay="autoplay"> </video>
+         </div>
+        
+			<canvas id="canvas" width="500px" height="500px"></canvas>
+        </ul>
+    </section>
+    <!--车流记录部分-->
+</div>
+
+<script>
+
+    function getMedia() {
+		console.log("开启摄像头1")
+        let constraints = {
+            video: {width: 600, height: 300},
+            audio: true
+        };
+        //获得video摄像头区域
+        let video = document.getElementById("video");
+        //这里介绍新的方法，返回一个 Promise对象
+        // 这个Promise对象返回成功后的回调函数带一个 MediaStream 对象作为其参数
+        // then()是Promise对象里的方法
+        // then()方法是异步执行，当then()前的方法执行完后再执行then()内部的程序
+        // 避免数据没有获取到
+        let promise = navigator.mediaDevices.getUserMedia(constraints);
+        promise.then(function (MediaStream) {
+            video.srcObject = MediaStream;
+            video.play();
+        });
+    }
+    function getMedia1() {
+        let constraints = {
+            video: {width: 600, height: 300},
+            audio: true
+        };
+        //获得video摄像头区域
+        let video1 = document.getElementById("video1");
+        //这里介绍新的方法，返回一个 Promise对象
+        // 这个Promise对象返回成功后的回调函数带一个 MediaStream 对象作为其参数
+        // then()是Promise对象里的方法
+        // then()方法是异步执行，当then()前的方法执行完后再执行then()内部的程序
+        // 避免数据没有获取到
+        let promise = navigator.mediaDevices.getUserMedia(constraints);
+        promise.then(function (MediaStream) {
+            video1.srcObject = MediaStream;
+            video1.play();
+        });
+    }
+    // function takePhoto() {
+    //     //获得Canvas对象
+    //     let video = document.getElementById("video");
+    //     let canvas = document.getElementById("canvas");
+    //     let ctx = canvas.getContext('2d');
+    //     ctx.drawImage(video, 0, 0, 500, 500);
+    // }
+    // setTimeout("getMedia()",3000);  设置定时器自动调用方法
+</script>
+</body>
+</html>
