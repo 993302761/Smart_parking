@@ -1,4 +1,6 @@
 MYSQL
+
+Smart_parking
 {
 
         User_information        //用户表
@@ -32,6 +34,7 @@ create table Vehicle_information(user_name int(11) primary key,
         Order_information                  //订单信息表
         {
          order_number:订单编号
+         generation_time：订单生成时间
         user_name：用户名
         inTime：进入时间
         outTime：离开时间
@@ -44,6 +47,7 @@ create table Vehicle_information(user_name int(11) primary key,
         }
 
 create table Order_information( order_number varchar(50)  primary key,
+                                 generation_time datetime not null,
                                  user_name int(11) not null,
                                  inTime datetime,
                                  outTime datetime,
