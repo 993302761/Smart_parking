@@ -125,19 +125,6 @@ Redis
 }
 
 
-ES
-{
-
-        Parking_lot_information         //停车场信息
-        {
-        Parking_name：停车场名
-        place_id：停车场编号
-        longitude：经度
-        latitude：纬度
-        }
-
-}
-
 
 
 
