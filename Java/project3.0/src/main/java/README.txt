@@ -1,6 +1,7 @@
 MYSQL
 
-Smart_parking
+Smart_parking           //数据库名
+
 {
 
         User_information        //用户表
