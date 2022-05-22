@@ -1,6 +1,6 @@
 MYSQL
 
-Smart_parking           //数据库名
+create database Smart_parking;           //数据库名
 
 {
 
@@ -11,7 +11,7 @@ Smart_parking           //数据库名
         user_id：身份证号
         }
 
-create table User(user_name int(11) primary key,
+create table User(user_name varchar(11) primary key,
                   password varchar(50) not null,
                   user_id varchar(20) not null);
 
@@ -25,7 +25,7 @@ create table User(user_name int(11) primary key,
         vehicle_license：车辆行驶证照片
         }
 
-create table Vehicle_information(user_name int(11) primary key,
+create table Vehicle_information(user_name varchar(11) primary key,
                                  user_id varchar(20) not null,
                                  license_plate_number varchar(20),
                                  picture_index varchar(50),
@@ -49,7 +49,7 @@ create table Vehicle_information(user_name int(11) primary key,
 
 create table Order_information( order_number varchar(50)  primary key,
                                  generation_time datetime not null,
-                                 user_name int(11) not null,
+                                 user_name varchar(11) not null,
                                  inTime datetime,
                                  outTime datetime,
                                  parking_lot_name varchar(50),
@@ -73,7 +73,7 @@ create table Order_information( order_number varchar(50)  primary key,
         }
 
 
-create table Parking_lot_information(pctr_id int(11) primary key,
+create table Parking_lot_information(pctr_id varchar(11) primary key,
                                      pctr_password varchar(50) not null,
                                      parking_lot_name varchar(50) not null,
                                      parking_lot_number varchar(20) not null,
@@ -90,7 +90,7 @@ create table Parking_lot_information(pctr_id int(11) primary key,
         }
 
 
-create table controller(ctr_id int(11) primary key,
+create table controller(ctr_id varchar(11) primary key,
                         ctr_password varchar(50) not null);
 
 }
